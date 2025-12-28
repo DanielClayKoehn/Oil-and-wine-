@@ -1,127 +1,135 @@
-/* =========================
-   FONT
-========================= */
+/* ---------------------------
+   OPTIONAL CUSTOM FONTS
+   Put your fonts here:
+   /fonts/CalifornianSignature.otf  (for Oil & Wine logo)
+   /fonts/YourScriptureFont.otf     (for the “poured in oil and wine” line)
+---------------------------- */
+
 @font-face {
   font-family: "CalifornianSignature";
   src: url("../fonts/CalifornianSignature.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* =========================
-   RESET
-========================= */
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh
-      /* forces background past Safari bar */
-  background-color: #6b5d4a;
-  color: #ffffff;
-  font-family: Georgia, serif;
-}background: url("../assets/home.jpg") center /
+@font-face {
+  font-family: "ScriptureFont";
+  src: url("../fonts/YourScriptureFont.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* =========================
-   FIXED BACKGROUND (WORKS ON IPHONE)
-   We set a CSS variable per page, then render it
-   as a fixed layer behind everything.
-========================= */
+/* ---------------------------
+   BASE
+---------------------------- */
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 body {
-  min-height: 100vh;
-  position: relative;
-  background: #000; /* fallback */
+  margin: 0;
+  color: #fff;
+
+  /* ✅ NO OVERLAY — this is the ONLY background */
+  background: url("../assets/home.jpg") center / cover no-repeat;
 }
 
+/* ✅ IMPORTANT: if you had overlays before, this kills them */
+body::before,
+body::after {
+  content: none !important;
+  display: none !important;
+}
 
-/* Dark overlay for readability */
-
-/* =========================
-   PAGE BACKGROUNDS (JPG)
-========================= */
-.bg-home     { --bg: url("../assets/home.jpg"); }
-.bg-poems    { --bg: url("../assets/poems.jpg"); }
-.bg-writings { --bg: url("../assets/writings.jpg"); }
-.bg-quotes   { --bg: url("../assets/quotes.jpg"); }
-.bg-songs    { --bg: url("../assets/songs.jpg"); }
-
-/* =========================
+/* ---------------------------
    TOP BAR
-========================= */
+---------------------------- */
 .topbar {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 14px 16px;
+  z-index: 50;
+
+  /* transparent — no black bar */
+  background: transparent;
+  padding: 16px 18px;
+}
+
+.topbar-inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  z-index: 10;
-
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(10px);
+  gap: 16px;
 }
 
-/* Brand (top-left) */
+/* Brand */
 .brand {
-  font-family: "CalifornianSignature", cursive;
-  font-size: 34px;
-  line-height: 0.9;
-}
-
-/* Nav links */
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  justify-content: flex-end;
-  text-align: right;
-}
-
-.menu a {
-  color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  color: #fff;
+  line-height: 0.9;
+  display: inline-flex;
+  flex-direction: column;
 }
 
-.menu a:hover { text-decoration: underline; }
+.brand-line {
+  font-family: "CalifornianSignature", "Brush Script MT", "Snell Roundhand", cursive;
+  font-size: 40px;
+}
 
-/* =========================
-   MAIN LAYOUT
-========================= */
+/* Nav */
+.nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  padding: 6px 2px;
+}
+
+.nav-link:hover { color: #fff; }
+.nav-link.active { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
+
+/* ---------------------------
+   HERO
+---------------------------- */
 .hero {
   min-height: 100vh;
-  padding-top: 90px;   /* pulls content UP so image isn’t “too low” */
-  padding-bottom: 80px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 110px 18px 40px; /* space for the fixed nav */
+}
+
+.hero-inner {
   text-align: center;
 }
 
-/* Big center title + subtitle */
-.hero-title {
-  margin-top: 40px;
-  font-family: "CalifornianSignature", cursive;
-  font-size: clamp(52px, 7vw, 92px);
-}
-
-.hero-sub {
-  margin-top: 10px;
-  font-family: "CalifornianSignature", cursive;
-  font-size: clamp(20px, 3vw, 40px);
-  }
-
-/* =========================
-   MOBILE TWEAKS
-========================= */
-@media (max-width: 420px) {
-  .brand { font-size: 30px; }
-  .menu a { font-size: 16px; }
-  .hero { padding-top: 82px; }
-}
+/* “and He poured in oil and wine” — different font */
 .scripture {
-  margin-top: 2.5rem;
-  font-family: "CalifornianSignature", cursive;
-  font-size: 1.6rem;
-  letter-spacing: 0.05em;
-  opacity: 0.9;
+  margin: 0;
+  font-family: "ScriptureFont", "Snell Roundhand", "Brush Script MT", cursive;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+
+  /* subtle readability without dark overlay */
+  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
+}
+
+/* ---------------------------
+   MOBILE
+---------------------------- */
+@media (max-width: 720px) {
+  .brand-line { font-size: 36px; }
+  .nav-link { font-size: 18px; }
+  .scripture { font-size: 34px; }
 }
