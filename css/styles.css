@@ -61,7 +61,7 @@ html, body {
 
 .hero {
   min-height: 100dvh; /* fixes iPhone Safari */
-  background-image: url("../assets/home-river.jpg");
+  background-image: url("../assets/home.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
