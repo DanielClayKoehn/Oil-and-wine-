@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songs • Oil & Wine</title>
+
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body class="bg-page bg-songs">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">Oil & Wine</div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </header>
+
+  <!-- MENU -->
+  <nav class="menu" id="menu">
+    <a href="/index.html">Home</a>
+    <a href="/poems.html">Poems</a>
+    <a href="/writings.html">Writings</a>
+    <a href="/quotes.html">Quotes</a>
+    <a href="/songs.html">Songs</a>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <main class="page">
+    <div>
+      <h1 class="hero-title">Songs</h1>
+      <p class="hero-sub">Lyrics waiting for a melody</p>
+
+      <section class="card">
+        <h2>Submit Lyrics or a Song</h2>
+
+        <div class="actions">
+          <a
+            class="btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdwuMw-ZgVyfGBP45VTlnEXZVpEGRYzWl8dnYpQzRDY2VvsYg/viewform"
+            target="_blank"
+            rel="noopener"
+          >
+            Submit Lyrics / Song
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- MENU SCRIPT -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && e.target !== menuBtn) {
+        menu.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>
