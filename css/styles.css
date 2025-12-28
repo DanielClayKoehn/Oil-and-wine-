@@ -46,10 +46,14 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(107, 93, 74, 0.35) 0%,
+    rgba(107, 93, 74, 0.35) 75%,
+    rgba(107, 93, 74, 1) 100%
+  );
   z-index: -1;
-  background: rgba(0,0,0,0.25);
 }
-
 /* =========================
    PAGE BACKGROUNDS (JPG)
 ========================= */
@@ -125,28 +129,7 @@ body::after {
   margin-top: 10px;
   font-family: "CalifornianSignature", cursive;
   font-size: clamp(20px, 3vw, 40px);
-  opacity: 0.95;
-}
-
-/* =========================
-   GLASS CARD
-========================= */
-.card {
-  margin-top: 28px;
-  width: min(820px, 92vw);
-  padding: 22px 22px;
-  border-radius: 18px;
-  background: rgba(0,0,0,0.40);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.14);
-}
-
-.card p {
-  font-size: 20px;
-  line-height: 1.45;
-}
-
-.card p + p { margin-top: 12px; }
+  }
 
 /* =========================
    MOBILE TWEAKS
@@ -155,4 +138,11 @@ body::after {
   .brand { font-size: 30px; }
   .menu a { font-size: 16px; }
   .hero { padding-top: 82px; }
+}
+.scripture {
+  margin-top: 2.5rem;
+  font-family: "CalifornianSignature", cursive;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
 }
