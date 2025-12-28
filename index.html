@@ -1,40 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Oil & Wine</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="bg-home">
-
+<body>
   <header class="topbar">
-    <div class="brand">Oil &amp;<br>Wine</div>
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Oil and Wine Home">
+        <span class="brand-line">Oil &amp;</span>
+        <span class="brand-line">Wine</span>
+      </a>
 
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="poems.html">Poems</a>
-      <a href="writings.html">Writings</a>
-      <a href="quotes.html">Quotes</a>
-      <a href="songs.html">Songs</a>
-    </nav>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="poems.html">Poems</a>
+        <a class="nav-link" href="writings.html">Writings</a>
+        <a class="nav-link" href="quotes.html">Quotes</a>
+        <a class="nav-link" href="songs.html">Songs</a>
+      </nav>
+    </div>
   </header>
 
   <main class="hero">
-    <h1 class="hero-title">Oil &amp; Wine</h1>
-    <p class="scripture">… and He poured in oil and wine</p>
+    <div class="hero-inner">
+      <!-- THIS is the "and He poured in oil and wine" line -->
+      <h1 class="scripture">…and He poured in oil and wine</h1>
 
-    <div class="card">
-      <p>
-        Oil &amp; Wine is a place for words that linger — poems, reflections,
-        lyrics, and thoughts meant to be shared.
-      </p>
-      <p>
-        Read quietly. Write honestly. Leave something behind.
-      </p>
+      <!-- Text underneath has been ERASED (removed) -->
     </div>
   </main>
-
 </body>
 </html>
