@@ -1,0 +1,110 @@
+/* =========================
+   GLOBAL RESET & BACKGROUND
+   ========================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #6b5d4a; /* brown everywhere */
+  color: #fff;
+}
+
+/* =========================
+   FONTS
+   ========================= */
+
+@font-face {
+  font-family: "CalifornianSignature";
+  src: url("../fonts/CalifornianSignature.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SerifSoft";
+  src: serif;
+}
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 20px;
+  background: rgba(107, 93, 74, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  font-family: "CalifornianSignature", cursive;
+  font-size: 34px;
+}
+
+.nav a {
+  margin-left: 16px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+  min-height: 100dvh; /* fixes iPhone Safari */
+  background-image: url("../assets/home-river.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding-top: 90px;
+}
+
+/* =========================
+   HERO CONTENT
+   ========================= */
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 120px;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "CalifornianSignature", cursive;
+  font-size: clamp(48px, 6vw, 72px);
+  margin-bottom: 10px;
+}
+
+.hero-script {
+  font-family: "SerifSoft", serif;
+  font-size: 20px;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   CONTENT CARD
+   ========================= */
+
+.card {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.card p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
