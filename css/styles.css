@@ -9,11 +9,12 @@
 /* =========================
    RESET
 ========================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 html, body {
-  height: 100%;
-  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 200vh; /* forces background past Safari bar */
+  background-color: #6b5d4a;
+  color: #ffffff;
   font-family: Georgia, serif;
 }
 
